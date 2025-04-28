@@ -62,7 +62,7 @@
             let at_time = document.querySelector('input#timeform').value;
             let time1 = `${now_time.getHours()}:${now_time.getMinutes()}:${now_time.getSeconds()}`;
             let time2 = `${at_time}:00`;
-            let res1 = timeMath.sub(time1, time2);
+            let res1 = timeMath.sub(time2, time1);
             document.querySelector('span#attime').innerHTML=res1;
         }, 500);
     </script>
