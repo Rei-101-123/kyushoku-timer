@@ -10,28 +10,60 @@
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="index.css">
+    <script src="math.js"></script>
 </head>
 <body>
     <h1>給食タイマー</h1>
     <form>
         <label for="time">目標時間</label>
-        <input type="time" value="12:37" name="time" id="timeform"> 
+        <input type="time" value="" name="time" id="timeform"> 
         
     </form>
     <p>現在時刻<br><span id="nowtime"></span></p>
     <p>目標時刻<span id="attime"></span></p>
 
     <script>
+        function getCookie(cookieName){
+            let name = cookieName + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let cookieArray = decodedCookie.split(';');
+
+            for(let i = 0;i < cookieArray.length; i++){
+                let cookie= cookieArray[i].trim();
+                if (cookie.indexOf.name==0){
+                    return cookie.substring(name.length, cookie.length)
+                }
+
+                return null
+            }
+        }
+
+        let timeform = document.querySelector("input#timeform");
+
+        window.addEventListener('load',()=>{
+            if(document.cookie){
+                let hour=getCookie("hour");
+                let minute = getCookie("minute");
+                if(hour != null & minute != null){
+                    timeform.value=formtime
+                }
+                else{
+                    timeform.value="12:40"
+                }
+            }
+        });
         let now_time = setInterval(()=>{
             let times = new Date()
             let time = `${String(times.getHours()).padStart(2,'0')}:${String(times.getMinutes()).padStart(2,'0')}:${String(times.getSeconds()).padStart(2,'0')}`;
             document.querySelector('span#nowtime').innerHTML = time;
         }, 500);
-        let timeform = document.querySelector("input#timeform");
         let at_time = setInterval(() => {
             let now_time =new Date();
             let at_time = document.querySelector('input#timeform').value;
-            document.querySelector('span#attime').innerHTML=at_time;
+            let time1 = `${now_time.getHours()}:${now_time.getMinutes()}:${now_time.getSeconds()}`;
+            let time2 = `${at_time}:00`;
+            let res1 = timeMath.sub(time1, time2);
+            document.querySelector('span#attime').innerHTML=res1;
         }, 500);
     </script>
 </body>
