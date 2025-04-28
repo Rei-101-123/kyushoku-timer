@@ -19,6 +19,7 @@
         
     </form>
     <p>現在時刻<br><span id="nowtime"></span></p>
+    <p>目標時刻<span id="attime"></span></p>
 
     <script>
         let now_time = setInterval(()=>{
@@ -27,7 +28,11 @@
             document.querySelector('span#nowtime').innerHTML = time;
         }, 500);
         let timeform = document.querySelector("input#timeform");
-        
+        let at_time = setInterval(() => {
+            let now_time =new Date();
+            let at_time = document.querySelector('input#timeform').value;
+            document.querySelector('span#attime').innerHTML=at_time;
+        }, 500);
     </script>
 </body>
 </html>
