@@ -50,9 +50,12 @@
             let res2_2 = Math.floor(time2 / (1000) * -1);
             res2_1=`${res2_1}`;
             res2_2=`${res2_2}`;
+            if(res2_1<0){
+                res2_1=60-res2_1
+            }
             if(res2_1.length<=1)res2_1="0"+res2_1;
             if(res2_2.length<=1)res2_2="0"+res2_2;
-            let res3 = res2_1 + ":" + (res2_2 - (res2_1 * 60))
+            let res3 = res2_1 + ":" + (res2_2 - (res2_1*60))
             document.querySelector('span#attime').innerHTML = res3;
             if(res2_1<0 || (res2_1==0 && res2_2==0)){
                 if(!stop_a){

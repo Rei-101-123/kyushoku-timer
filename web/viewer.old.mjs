@@ -896,7 +896,7 @@ const defaultOptions = {
 };
 {
   defaultOptions.defaultUrl = {
-    value: `pdf/2025_${new Date().getMonth() + 1}.pdf`,
+    value: "compressed.tracemonkey-pldi-09.pdf",
     kind: OptionKind.VIEWER
   };
   defaultOptions.sandboxBundleSrc = {
