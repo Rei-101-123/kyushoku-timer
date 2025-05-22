@@ -28,6 +28,8 @@
     <audio src="audio/stop.mp3" controls></audio>
 
     <script>
+        var bugset = false
+
         var stop_a = false
         let timeform = document.querySelector("input#timeform");
 
@@ -54,7 +56,7 @@
             let res2_2 = Math.floor(time2 / (1000) * -1);
             res2_1=`${res2_1}`;
             res2_2=`${res2_2}`;
-            bug.innerHTML="a" + res2_2 + "b" + res2_1*60;
+            if(bugset)bug.innerHTML="a" + res2_2 + "b" + res2_1*60;
             // if(res2_1<0 && !res2_2<0){
             //     res2_1=60-res2_1
             // }
@@ -68,13 +70,13 @@
             //     res2_2=res2_1+times.getSeconds()
             // }
             
-            bug.innerHTML+="a" + res2_2 + "b" + res2_1*60;
+            if(bugset)bug.innerHTML+="a" + res2_2 + "b" + res2_1*60;
 
             let min = res2_1;
             let sec = res2_2-res2_1*60;
             
 
-            bug.innerHTML+="m" + String(min).length + "s" + String(sec).length
+            if(bugset)bug.innerHTML+="m" + String(min).length + "s" + String(sec).length
 
             if(ifminus){
                 document.querySelector('span#attime').style.color='#f00';
