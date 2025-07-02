@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="display: flex;">
+    <!-- <iframe src="https://mozilla.github.io/pdf.js/legacy/web/viewer.html?file=tamago551234.stars.ne.jp%2Fpdf%2F2025_5.pdf" style="height: 100vh;width: 70%;"></iframe> -->
+    <!-- <iframe src="web2/viewer.html" style="height: 100vh;width: 70%;"></iframe>
+    <iframe src="timer.html" style="height: 100vh;width: 30%;"></iframe> -->
+
+    <script>
+        let pdfs = document.createElement('iframe');
+        let data1 = `/web2/pdf/2025_${new Date().getMonth() + 1}.pdf`;
+        data1 = encodeURI(data1);
+        pdfs.src=`web2/viewer.html?file=${data1}`;
+        pdfs.style.height="100vh";
+        pdfs.style.width="70%";
+        document.body.appendChild(pdfs);
+        let timer = document.createElement('iframe');
+        timer.src='timer.html';
+        timer.style.height="100vh";
+        timer.style.width="30%";
+        document.body.appendChild(timer);
+    </script>
+</body>
+</html>
