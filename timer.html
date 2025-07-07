@@ -31,10 +31,15 @@
     <table>
         <tr>
             <td>
-                <button id="timemain">通常日課(12:40)</button>
+                <a id="timemain" class="btn-square">通常日課(12:40)</a>
             </td>
             <td>
-                <button id="timesub">短縮日課(12:20)</button>
+                <a id="timesub" class="btn-square">短縮日課(12:20)</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a id="reset" class="btn-square">リセット</a>
             </td>
         </tr>
     </table>
@@ -45,13 +50,17 @@
         var stop_a = false
         let timeform = document.querySelector("input#timeform");
 
-        document.querySelector('button#timemain').addEventListener('click',()=>timeform.value="12:40")
-        document.querySelector('button#timesub').addEventListener('click',()=>timeform.value="12:20")
-
-        timeform.addEventListener('change',()=>{
+        const timereset=()=>{
             stop_a = false;
             document.querySelector('span#attime').style.color='#00f';
-        });
+            document.querySelector('audio').currentTime=0;
+        }
+
+        document.querySelector('#timemain').addEventListener('click',()=>timeform.value="12:40")
+        document.querySelector('#timesub').addEventListener('click',()=>timeform.value="12:20")
+        document.querySelector('#reset').addEventListener('click',timereset)
+
+        timeform.addEventListener('change',timereset);
         let now_time = setInterval(() => {
             let bug = document.querySelector('p#bug');
 
