@@ -4,10 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>給食タイマー</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+    
+    <!-- <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.css">
+    <script src="jquery/jquery-1.11.1.min.js"></script>
+    <script src="jquery/jquery.mobile-1.4.5.js"></script> -->
+
+    <link rel="stylesheet" href="index.css">
 </head>
 <body style="display: flex;">
-    <iframe src="https://mozilla.github.io/pdf.js/legacy/web/viewer.html?file=tamago551234.stars.ne.jp%2Fpdf%2F2025_5.pdf" style="height: 100vh;width: 70%;"></iframe>
+    <iframe src="https://mozilla.github.io/pdf.js/legacy/web/viewer.html?file=tamago551234.stars.ne.jp%2Fpdf%2F2025_5.pdf" style="height: 95vh;width: 70%;"></iframe>
     <!-- <iframe src="web/viewer.html" style="height: 100vh;width: 70%;"></iframe> -->
-    <iframe src="timer.html" style="height: 100vh;width: 30%;"></iframe>
+    <!-- <iframe src="timer.html" style="height: 100vh;width: 30%;"></iframe> -->
+    <div id="timer" style="height: 95vh;width: 25%;">
+        <h1>給食タイマー</h1>
+        <form>
+            <label for="time">目標時間</label>
+            <input type="time" value="12:40" name="time" id="timeform">
+
+        </form>
+        <div id="preset-button"></div>
+        <p>現在時刻<br><span id="nowtime"></span></p>
+        <p>目標時刻<br><span id="attime"></span></p>
+        <p id="bug"></p>
+        <audio src="audio/stop.mp3" controls></audio>
+        <br></br>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <a id="timemain" class="btn-square">通常日課(12:40)</a>
+            </div>
+            <div class="ui-block-b">
+                <a id="timesub" class="btn-square">短縮日課(12:20)</a>
+            </div>
+        </div>
+        <span style="height: 5px;display:block;"></span>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <a id="fullscreen" class="btn-square">フルスクリーン</a>
+            </div>
+            <div class="ui-block-b">
+                <a id="reset" class="btn-square">リセット</a>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </div>
 </body>
 </html>

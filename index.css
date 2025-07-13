@@ -3,23 +3,40 @@ body{
     font-weight: 400;
     font-style: normal;
 }
+#timer{
+    margin-left: 10px;
+    margin-right: 10px;
+    display: block;
+}
 span#nowtime,span#attime{
     font-weight: 600;
     font-size: 3em;
     color:#0000ff;
 }
 .btn-square {
-  display: inline-block;
-  padding: 0.5em 1em;
-  text-decoration: none;
-  background: #668ad8;/*ボタン色*/
-  color: #FFF;
-  border-bottom: solid 4px #627295;
-  border-radius: 3px;
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+    text-align: center;
 }
 .btn-square:active {
-  /*ボタンを押したとき*/
-  -webkit-transform: translateY(4px);
-  transform: translateY(4px);/*下に動く*/
-  border-bottom: none;/*線を消す*/
+    /*ボタンを押したとき*/
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
 }
+.ui-grid-a{
+    display: flex;
+}
+/* .ui-block-a,.ui-block-b{
+    width: 100%;
+    display: inline-block;
+}
+.ui-block-a a,.ui-block-b a{
+    width: 100%;
+    display: inline-block;
+} */
