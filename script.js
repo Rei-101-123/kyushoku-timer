@@ -42,6 +42,7 @@ let timeform = document.querySelector("input#timeform");
 const timereset=()=>{
     stop_a = false;
     document.querySelector('span#attime').style.color='#00f';
+    document.querySelector('audio').pause()
     document.querySelector('audio').currentTime=0;
 }
 
