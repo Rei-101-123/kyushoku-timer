@@ -32,7 +32,7 @@ fullbu.addEventListener('click',()=>{
         fullbu.innerHTML = "フルスクリーン<br>解除"
     }
 
-})
+});
 addEventListener("fullscreenchange", (event) => {
     if (document.fullscreenElement) {
         fullbu.innerHTML = "フルスクリーン"
@@ -41,9 +41,9 @@ addEventListener("fullscreenchange", (event) => {
     }
 });
 
-var bugset = false
+var bugset = false;
 
-var stop_a = false
+var stop_a = false;
 let timeform = document.querySelector("input#timeform");
 
 const timereset=()=>{
@@ -101,14 +101,14 @@ let now_time = setInterval(() => {
 
     if(ifminus){
         document.querySelector('span#attime').style.color='#f00';
-        min-=1
+        min-=1;
     }
 
-    if(String(sec)=='60'){min+=1}
-    if(String(min).length==1){min='0'+String(min)}
-    if(ifminus)min='-'+min
-    if(String(sec).length==1){sec='0'+String(sec)}
-    if(String(sec)=='60'){sec='00'}
+    if(String(sec)=='60'){min+=1};
+    if(String(min).length==1){min='0'+String(min)};
+    if(ifminus)min='-'+min;
+    if(String(sec).length==1){sec='0'+String(sec)};
+    if(String(sec)=='60'){sec='00'};
     
     let res3 = min + ":" + sec;
     document.querySelector('span#attime').innerHTML = res3;
