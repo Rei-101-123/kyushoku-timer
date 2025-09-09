@@ -33,6 +33,13 @@ fullbu.addEventListener('click',()=>{
     }
 
 })
+addEventListener("fullscreenchange", (event) => {
+    if (document.fullscreenElement) {
+        fullbu.innerHTML = "フルスクリーン"
+    } else {
+        fullbu.innerHTML = "フルスクリーン<br>解除"
+    }
+});
 
 var bugset = false
 
